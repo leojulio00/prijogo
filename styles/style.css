@@ -1,0 +1,10 @@
+canvas{
+       position = absolute;
+       top = 0px;
+       bottom = 0px;
+       left = 0px;
+       rigth = 0px;
+       /*transform = translateX(50%);*/
+       margin = auto;
+     }
+

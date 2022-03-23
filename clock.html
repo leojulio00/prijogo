@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Hello, World!</title>
+</head>
+<body>
+  <h1>
+    Hello, World!
+  </h1>
+  
+  <span id="span"></span>
+ <p id="year"></p>
+<p id="month"></p>
+<p id="date"></p>
+<p id="day"></p>
+<p id="hour"></p>
+<p id="minute"></p>
+<p id="second"></p>
+<p id="time"></p>
+  
+  
+  <script>
+    var span = document.getElementById('span');
+
+function time() {
+  var d = new Date();
+  var s = d.getSeconds();
+  var m = d.getMinutes();
+  var h = d.getHours();
+  span.textContent = 
+    ("0" + h).substr(-2) + ":" + ("0" + m).substr(-2) + ":" + ("0" + s).substr(-2);
+}
+
+setInterval(time, 1000);
+  
+  
+  function timer() {
+    const DATE = new Date();
+    let monthNames = ["January", "Febuary", "March", "April", "May", "Junho", "July", "August", "September", "October", "November", "December"];
+    let dayNames = ["Monday", "Tuesday", "Wendesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    console.log(DATE);
+    document.getElementById('year').innerHTML = DATE.getFullYear();
+    document.getElementById('month').innerHTML = monthNames[DATE.getMonth()];
+    document.getElementById('date').innerHTML = DATE.getDate();
+    document.getElementById('day').innerHTML = dayNames[DATE.getDay() - 1];
+    let hour = document.getElementById('hour').innerHTML = DATE.getHours();
+    let min = document.getElementById('minute').innerHTML = DATE.getMinutes();
+    let sec = document.getElementById('second').innerHTML = DATE.getSeconds();
+    //change the lets types to string and check if its 1 or 2 digits
+    hour = hour.toString()
+    if (hour.length < 2) {
+        //prepend a 0 to the string to pad if necessary
+        hour = '0' + hour;
+    }
+    min = min.toString()
+    if (min.length < 2) {
+        //prepend a 0 to the string to pad if necessary
+        min = '0' + min;
+    }
+    sec = sec.toString()
+    if (sec.length < 2) {
+        sec = '0' + sec;
+    }
+    let theTime = document.getElementById('time').innerHTML = hour + " : " + min + " : " + sec;
+    setTimeout(timer, 1000);
+}
+timer();
+    
+
+  </script>
+  
+  
+</body>
+</html>
